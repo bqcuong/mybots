@@ -24,7 +24,7 @@ $ pip install -r requirements.txt
 Next, install the service to your Linux machine by coping it to `/etc/systemd/system` directory. 
 You could configure the service file as you like.
 ```
-cp mofabot.service /etc/systemd/system/mofabot.service
+$ cp mofabot.service /etc/systemd/system/mofabot.service
 ```
 ## Configuration
 Before running MofaBot for the first time, copy the `config.yml.sample` to `config.yml`. 
