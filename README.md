@@ -1,6 +1,6 @@
 # MofaBot
 ## Introduction
-A Telegram bot that helps you keep looking for the signature of the employee in your local government authority has been introduced to VN MOFA - Consular Department system or not.
+A Telegram bot that helps you to keep looking for signature status (introduced or not) of the employee in your local government authority (who signed your documents) in the  public service system of VN MOFA - Consular Department.
 The purpose of this bot is related to the application for [CERTIFICATION/LEGALISATION OF DOCUMENTS (CHỨNG NHẬN LÃNH SỰ/HỢP PHÁP HÓA LÃNH SỰ)](https://hopphaphoa.lanhsuvietnam.gov.vn/Legalization/Legalized-Introduction.aspx) at MOFA, for people being less lucky like me. 
 It might not help us much with our application process but give me a chance to put my trust in the authority.
 
