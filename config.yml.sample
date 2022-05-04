@@ -1,0 +1,22 @@
+mofabot:
+  # Configurations for your telegram bot.
+  # For creating a new bot, check https://core.telegram.org/bots#6-botfather, easy as piece of cake
+  # <token> is the token of your bot after you created it with BotFather
+  # <sleep_time> in seconds between the loop iterations for checking result
+  # <receiver_ids> are the initial id list of the users you want to send the message to, you could leave it empty
+  telegram:
+    token: ""
+    sleep_time: 3600
+    receiver_ids:
+      - 123456789
+
+  # Parameters for the request to Mofa API for checking our result
+  # <gov_agency_name> is the name of authority you want to check, e.g., UBND H. AbC, T. XyZ
+  # <employee_name> is the name of the authority employee whose F*CKING SIGNATURE hasn't been updated to the Mofa system,
+  #   e.g., NGUYỄN VĂN PHÈN
+  # <group_id> is the required header for the request to Mofa API, you can get it by inspecting the request header
+  # when you are filling the form at https://dichvucong.mofa.gov.vn/web/cong-dich-vu-cong-bo-ngoai-giao/to-khai-truc-tuyen
+  mofa_api:
+    gov_agency_name: ""
+    employee_name: ""
+    group_id: ""

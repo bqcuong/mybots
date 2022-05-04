@@ -1,0 +1,14 @@
+[Unit]
+Description=MofaBot script
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/mofabot/mofabot.py
+WorkingDirectory=/opt/mofabot
+StandardOutput=file:/var/log/mofabot.log
+StandardError=file:/var/log/mofabot.log
+SyslogIdentifier=mofabot
+
+[Install]
+WantedBy=multi-user.target
