@@ -76,6 +76,12 @@ After running your bot on server side, you could test the bot by sending several
 - `/unsubscribe`: as clear as day, to unsubscribe you from the subscriber list
 - `/check`: perform an immediate check of the signature status and send the result back to you right after that
 
+*The below message is what you will get if your lucky day has come:*
+```
+Ôh ồh ôh Ôh ồh! Ngon rồi bạn ơi! Chữ ký đã được giới thiệu!
+{'total': 1, 'data': [{'MA_CQQL': '12xxx', 'TEN_CHUC_VU': 'Chủ tịch UBND', 'MA_CHUC_VU': 'xxxx', 'MA': 'abc123xxx', 'TEN': 'Nguyễn Văn Phèn', 'TEN_CQQL': 'UBND H. AbC, T. XyZ'}]}
+```
+
 ## Contributing
 Pull requests are welcome, as well as issues. Fixing/Improving the documentation is highly appreciated. 
 
