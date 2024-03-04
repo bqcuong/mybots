@@ -29,8 +29,8 @@ mofabot:
 
   # Parameters for the request to Mofa API for checking our result
   # <gov_agency_name> is the name of authority you want to check, e.g., UBND H. AbC, T. XyZ
-  # <employee_name> is the name of the authority employee whose F*CKING SIGNATURE hasn't been updated to the Mofa system,
-  #   e.g., NGUYỄN VĂN PHÈN
+  # <employee_name> is the name of the authority employee whose SIGNATURE hasn't been updated to the Mofa system,
+  #   e.g., NGUYỄN VĂN A
   # <group_id> is the required header for the request to Mofa API, you can get it by inspecting the request header
   # when you are filling the form at https://dichvucong.mofa.gov.vn/web/cong-dich-vu-cong-bo-ngoai-giao/to-khai-truc-tuyen
   mofa_api:
