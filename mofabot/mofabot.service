@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /opt/mofabot/mofabot.py
-WorkingDirectory=/opt/mofabot
+ExecStart=/usr/bin/python3 /opt/mybots/mofabot/mofabot.py
+WorkingDirectory=/opt/mybots/mofabot
 StandardOutput=file:/var/log/mofabot.log
 StandardError=file:/var/log/mofabot.log
 SyslogIdentifier=mofabot
