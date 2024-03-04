@@ -1,0 +1,14 @@
+[Unit]
+Description=VHSBot script
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/mybots/vhsbot/vhsbot.py
+WorkingDirectory=/opt/mybots/vhsbot
+StandardOutput=file:/var/log/vhsbot.log
+StandardError=file:/var/log/vhsbot.log
+SyslogIdentifier=vhsbot
+
+[Install]
+WantedBy=multi-user.target

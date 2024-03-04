@@ -1,0 +1,8 @@
+vhsbot:
+  telegram:
+    token: 
+    sleep_time: 
+    receiver_ids:
+      - 
+  vhs_api:
+    course_list_url:
