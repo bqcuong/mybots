@@ -92,20 +92,21 @@ class VHSBot:
             url = course_list_url
             content = requests.get(url).text
             soup = BeautifulSoup(content, 'html.parser')
-            course_statuses = soup.select('tr > td:nth-child(4)')
+            course_statuses = soup.find_all(lambda t: t.name == "div" and t.has_attr("class") and "course-meta__status-content" in t.get("class"))
 
             rsp = {'total': 0, 'available_courses': []}
 
             for status_node in course_statuses:
                 status_text = status_node.text.strip()
-                if status_text != 'Voll':
-                    course_node = status_node.parent
+                if status_text != 'voll':
+                    course_node = status_node.parent.parent.parent
                     course_rsp = {
-                        'name': course_node.select('td:nth-child(1)')[0].text.strip(),
-                        'start_date': course_node.select('td:nth-child(2)')[0].text.strip(),
-                        'location': course_node.select('td:nth-child(3)')[0].text.strip(),
+                        'name': course_node.select('div:nth-child(1)')[0].text.strip(),
+                        'start_date': course_node.select('div:nth-child(4)')[0].text.replace("1 Termin", "").strip(),
+                        'location': course_node.select('div:nth-child(5)')[0].text.strip(),
                         'status': status_text
                     }
+                    print(course_rsp)
                     rsp['available_courses'].append(course_rsp)
 
             rsp['total'] = len(rsp['available_courses'])
