@@ -138,7 +138,6 @@ class HHSBot:
 
         except Exception as e:
             self.__log__.error("Error when crawling the web API %s", e)
-            raise(e)
             return None
 
     def broadcast(self, message):
