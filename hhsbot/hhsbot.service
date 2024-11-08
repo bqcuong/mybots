@@ -1,0 +1,14 @@
+[Unit]
+Description=HHSBot script
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/mybots/hhsbot/hhsbot.py
+WorkingDirectory=/opt/mybots/hhsbot
+StandardOutput=file:/var/log/hhsbot.log
+StandardError=file:/var/log/hhsbot.log
+SyslogIdentifier=hhsbot
+
+[Install]
+WantedBy=multi-user.target
