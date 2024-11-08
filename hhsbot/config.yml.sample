@@ -1,0 +1,13 @@
+hhsbot:
+  telegram:
+    token: 
+    sleep_time: 
+    receiver_ids:
+      - 
+  hhs_api:
+    kundenzentrum_url: 
+    terminsuchen_url: 
+    current_termin: 
+    digitermin_id: 
+    cookie_verify_token_key: 
+    cookie_verify_token_value: 
