@@ -16,12 +16,11 @@ logging.basicConfig(level=logging.DEBUG,
 BOT_NAME = "HHSBot"
 
 class HHSBot:
-    __log__ = logging.getLogger(BOT_NAME)
-
     def __init__(self, config_file_path: str):
         with open(config_file_path, 'r') as file:
             self.config = yaml.safe_load(file)["hhsbot"]
-
+        
+        self.__log__ = logging.getLogger(BOT_NAME)
         bot_config = self.config["telegram"]
         self.bot_token = bot_config["token"]
         self.sleep_time = bot_config["sleep_time"]  # in seconds
@@ -80,7 +79,10 @@ class HHSBot:
     def crawl_and_broadcast(self):
         rsp_data = self.crawl_data()
         if rsp_data is not None and rsp_data["notified"] > 0:
-            self.broadcast("Wow! Ngon rồi bạn ơi! Đã có termin mới ngon hơn!\n%s" % rsp_data)
+            if rsp_data['error'] != '':
+                self.broadcast(rsp_data['error'])
+            else:
+                self.broadcast("Wow! Ngon rồi bạn ơi! Đã có termin mới ngon hơn!\n%s" % rsp_data)
         # else:
             # do nothing
 
@@ -101,7 +103,7 @@ class HHSBot:
             if len(csrf_token_input) == 0:
                 raise Exception("Could not obtain the CSRF token!")
 
-            rsp = {'notified': 0, 'am_schnellsten': ''}
+            rsp = {'notified': 0, 'am_schnellsten': '', 'error': ''}
             csrf_token = csrf_token_input[0].get("value")
 
             # Step 2: Request TerminSuchen API
@@ -137,8 +139,10 @@ class HHSBot:
             return rsp
 
         except Exception as e:
-            self.__log__.error("Error when crawling the web API %s", e)
-            return None
+            self.__log__.debug("Error when crawling the web API %s", e)
+            rsp['notified'] = 1
+            rsp['error'] = 'Cookie timeout rồi bạn ơi! Refresh lại đi!'
+            return rsp
 
     def broadcast(self, message):
         if self.receiver_ids is None:
