@@ -110,7 +110,7 @@ class HHSBot:
             url = self.hhs_config["terminsuchen_url"]
             request_body = {
                 "__RequestVerificationToken": csrf_token,
-                "GewuenschterTermin.VonTag": datetime.now().strftime("%d.%m.%Y"),
+                "GewuenschterTermin.VonTag": self.hhs_config["from_date"], #datetime.now().strftime("%d.%m.%Y"),
                 "GewuenschterTermin.ZeitraumVon": "07:00",
                 "GewuenschterTermin.ZeitraumBis": "19:00",
                 "GewuenschterTermin.MoeglicherTagMontag": "false",
