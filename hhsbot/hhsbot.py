@@ -145,10 +145,10 @@ class HHSBot:
             self.__log__.debug("Error when crawling the web API %s", e)
             #print(traceback.format_exc())
 
+            rsp = {'notified': 0, 'error': 'Cookie timeout rồi bạn ơi! Refresh lại đi!'}
             if self.failed_to_check == 0:
-                rsp['notified'] = 1
                 self.failed_to_check = 1
-            rsp['error'] = 'Cookie timeout rồi bạn ơi! Refresh lại đi!'
+                rsp["notified"] = 1
             return rsp
 
     def broadcast(self, message):
